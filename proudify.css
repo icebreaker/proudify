@@ -1,0 +1,95 @@
+.proudify a, 
+.proudify a:active, 
+.proudify a:visited
+{
+    color: white;
+    text-decoration: none;
+}
+.proudify a:hover 
+{ 
+	text-decoration: underline; 
+}
+.proudify ul.list
+{
+    list-style-type: none;
+    padding: 0;
+}
+.proudify .loading 
+{
+	text-align: center;
+}
+.proudify .status
+{
+	float: right;
+}
+.proudify .red 
+{ 
+	color: red; 
+}
+.proudify .green 
+{ 
+	color: #87EA23; 
+}
+.proudify .desc
+{
+    color: #444;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+/****** GitHub - begin ******/
+.proudify.github
+{
+    background-color: #222;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+	-webkit-box-shadow: 5px;
+    text-shadow: #111 0px 2px 1px;
+    border-bottom: 1px solid #333436;
+}
+.proudify.github ul.list
+{
+    margin: 5px;
+}
+.proudify.github li.item
+{
+    box-shadow: black 0px 3px 5px inset;
+    -moz-box-shadow: black 0px 3px 5px inset;
+    -webkit-box-shadow: black 0px 3px 5px inset;
+	-webkit-box-shadow: 5px;
+    background: #181819;
+    border-bottom: 1px solid #333436;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+/****** GitHub - end ******/
+
+/****** Coderwall - begin ******/
+.proudify.coderwall li.item
+{
+	float: left;
+	margin: 5px;
+}
+.proudify.coderwall li.item a img
+{
+	width: 90px;
+	height: 90px;
+	border: 0;
+}
+.proudify.coderwall li.item a img
+{
+	opacity: 1.0;
+}
+.proudify.coderwall li.item a:hover img
+{
+	opacity: 0.6;
+}
+/****** Coderwall - end ******/
+
