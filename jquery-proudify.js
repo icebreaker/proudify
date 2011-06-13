@@ -82,7 +82,12 @@
 				
 				var li = $('<li>').addClass('item').appendTo(self.list);
 				
-				$('<a>').attr('href',item.html_url).html(item.name).appendTo(li);
+				$('<a>').
+				attr('href', item.html_url).
+				attr('target', '_blank').
+				html(item.name).
+				appendTo(li);
+
 				$('<span>').addClass('desc').html(item.description).appendTo(li);
 				
 				if(new Date(item.pushed_at) > pushed_at)
@@ -148,12 +153,15 @@
 			$.each(this.badges,function(i, item) 
 			{
 				var li = $('<li>').addClass('item').appendTo(self.list);
-				var link = $('<a>').attr('href', 'http://coderwall.com/' + self.settings.username).appendTo(li);
+				var link = $('<a>').
+				attr('href', 'http://coderwall.com/' + self.settings.username).
+				attr('target', '_blank').
+				appendTo(li);
 
 				$('<img>').
-				attr('alt',item.name).
+				attr('alt', item.name).
 				attr('title', item.description).
-				attr('src',item.badge).
+				attr('src', item.badge).
 				appendTo(link);
 			});
 
