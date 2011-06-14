@@ -12,7 +12,7 @@ Click [here](http://status.szabster.net) to check it out in action.
 
 Getting Started
 ---------------
-You can either copy `jquery-proudify.min.js` and `proudify.css` or 
+You can either copy `jquery-proudify.min.js` and `proudify.min.css` or 
 link to them in this repository.
 
 The later is recommended because you will get instant updates and
@@ -22,7 +22,7 @@ bug fixes without the hassle of updating by yourself.
 
 CSS (skin)
 
-	<link rel="stylesheet" href="proudify.css" type="text/css"/>
+	<link rel="stylesheet" href="proudify.min.css" type="text/css"/>
 
 The CSS above is optional and is only required if you do not want to create your own `theme`.
 
@@ -51,7 +51,7 @@ The last two `options` are for *Github* **only**.
 		$('#proudify').proudify({'username':'icebreaker'});
 	</script>
 	
-You can style it at your hearts content, `proudify.css` is a good starting point
+You can style it at your heart's content, `proudify.css` is a good starting point
 if you want to customize or tweak certain things.
 	
 Contribute
