@@ -49,13 +49,20 @@
 				for(var i in result.data)
 					self.repositories.push(result.data[i]);
 					
-				if(result.meta['Link'][0][1]['rel'] == 'first')
-				{
-					self.render();
+				if('Link' in result.meta)
+				{	
+					if(result.meta['Link'][0][1]['rel'] == 'first')
+					{
+						self.render();
+					}
+					else
+					{
+						self.fetch(result.meta['Link'][0][0]+'&callback=?');
+					}
 				}
 				else
 				{
-					self.fetch(result.meta['Link'][0][0]+'&callback=?');
+					self.render();
 				}
 			});
 		},
