@@ -11,4 +11,9 @@ Included Extras
 * Section Titles
 * Gravatar
 * Fork Me GitHub Ribbon
+* Social Media expandable, collapsible animated sidebar
 * Misc. tweaks
+
+Credits
+-------
+* [Social Media Icons](http://icons.mysitemyway.com)

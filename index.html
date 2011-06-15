@@ -9,56 +9,8 @@
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/> 
 		<!-- CSS -->
 		<link rel="stylesheet" href="https://raw.github.com/icebreaker/proudify/master/proudify.min.css" type="text/css"/>
-		<!-- Inline CSS -->
-		<style type="text/css">
-			body
-			{
-				font-family: "Yanone Kaffeesatz", "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-				font-size: 22px;
-				background-color: #181819;
-				color: #444444;
-			}
-			h1, h2, h3
-			{
-				text-shadow: #111 0px 2px 1px;
-				margin: 0;
-			}
-			h1 a
-			{
-				color: #FFFFFF;
-				text-decoration: none;
-			}
-			h1 a:hover
-			{
-				text-decoration: underline;
-			}
-			#info, #github, #coderwall
-			{
-				width: 800px;
-				margin-left: auto;
-				margin-right: auto;
-				margin-bottom: 50px;
-				margin-top: 50px;
-			}
-			#coderwall .proudify.coderwall .list .item
-			{
-				float: right;
-			}
-			#gravatar
-			{
-				float: left;
-				margin-right: 9px;
-				margin-top: 9px;
-			}
-			#gravatar img
-			{
-				width: 60px;
-				height: 60px;
-				border-radius: 5px;
-				-moz-border-radius: 5px;
-				border: 5px solid #FFFFFF;
-			}
-		</style>
+		<!-- Main Customize CSS -->
+		<link rel="stylesheet" href="main.css" type="text/css"/>
 		<!-- CSS Fonts -->
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Yanone+Kaffeesatz:extralight,light,regular,bold" type="text/css" media="screen, projection"/> 
 		<!-- jQuery -->
@@ -67,6 +19,15 @@
 		<script src="https://raw.github.com/icebreaker/proudify/master/jquery-proudify.min.js"></script>
 	</head>
 	<body>
+		<div class="proudify social">
+			<ul class="list">
+				<li class="item fb"><a href="http://facebook.com/szabster" target="_blank">Facebook</a></li>
+				<li class="item twitter"><a href="http://twitter.com/theicebreaker" target="_blank">Twitter</a></li>
+				<li class="item linkedin"><a href="http://linkedin.com/in/mihailszabolcs" target="_blank">LinkedIn</a></li>
+				<li class="item vimeo"><a href="http://vimeo.com/c0d3rguy" target="_blank">Vimeo</a></li>
+				<li class="item gmail"><a href="http://www.google.com/recaptcha/mailhide/d?k=01frET0_aGQ9WM5QjAxt6YDg==&c=_ElEufb1P2CzS9bv8kXQv16haDk3BzjEFqjFtUIW1P8=" target="_blank">Mail</a></li>
+			</ul>
+		</div>
 		<div id="info">
 			<div id="gravatar"><a href="http://szabster.net/" target="_blank"><img src="http://www.gravatar.com/avatar/c53d2d6c58f89f148fb56a136fa84d3e"/></a></div>
 			<h1><a href="http://szabster.net" target="_blank">Mihail Szabolcs</a></h1>
@@ -86,6 +47,14 @@
 		<script>
 			$('#coderwall').proudify({username:'icebreaker',service:'coderwall'});
 			$('#github').proudify({username:'icebreaker'});
+			$('.proudify.social').hover(function()
+			{
+				$(this).animate({"left": "+=74px"}, "fast");
+			},
+			function()
+			{
+				$(this).animate({"left": "-=74px"}, "fast");
+			});
 		</script>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];

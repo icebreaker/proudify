@@ -1,0 +1,91 @@
+body
+{
+	font-family: "Yanone Kaffeesatz", "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+	font-size: 22px;
+	background-color: #181819;
+	color: #444444;
+}
+h1, h2, h3
+{
+	text-shadow: #111 0px 2px 1px;
+	margin: 0;
+}
+h1 a
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+h1 a:hover
+{
+	text-decoration: underline;
+}
+#info, #github, #coderwall
+{
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+#coderwall .proudify.coderwall .list .item
+{
+	float: right;
+}
+#gravatar
+{
+	float: left;
+	margin-right: 9px;
+	margin-top: 9px;
+}
+#gravatar img
+{
+	width: 60px;
+	height: 60px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 5px solid #FFFFFF;
+}
+.proudify.social
+{
+	background-color: #222;
+	color: white;
+	position:fixed;
+	left: -74px;
+	width: 100px;
+	margin-top: 150px;
+	padding: 10px;
+	text-align: right;
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	text-shadow: #111 0px 2px 1px;
+	border-bottom: 1px solid #333436;
+	border-right: 1px solid #333436;
+}
+.proudify.social ul.list li
+{
+	font-size: 18px;
+	height: 28px;
+	padding-right: 40px;
+	line-height: 1.4em;
+}
+.proudify.social ul.list li.fb
+{
+	background:url('images/fb.png') top right no-repeat;
+}
+.proudify.social ul.list li.twitter
+{
+	background:url('images/twitter.png') top right no-repeat;
+}
+.proudify.social ul.list li.linkedin
+{
+	background:url('images/linkedin.png') top right no-repeat;
+}
+.proudify.social ul.list li.vimeo
+{
+	background:url('images/vimeo.png') top right no-repeat;
+}
+.proudify.social ul.list li.gmail
+{
+	background:url('images/gmail.png') top right no-repeat;
+}
+
