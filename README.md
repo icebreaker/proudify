@@ -40,9 +40,10 @@ Proudify takes a `hash` of options as described below:
 * username - your *GitHub* or *Coderwall* username (**required**)
 * service - *'github'* or *'coderwall'* (default: **github**)
 * pushed_at - number of days after a repository is considered to be **ON HOLD** (default: **120 ~ 4 months**) 
+* num - limit the number of shown repositories (default: **0 - show all**)
 * forks - include forks beside your own *original* repositories (default: **false**)
 
-The last two `options` are for *Github* **only**.
+The last three `options` are for *Github* **only**.
 
 ### Usage
 

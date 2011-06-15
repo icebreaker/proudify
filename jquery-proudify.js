@@ -86,6 +86,11 @@
 				{
 					return;
 				}
+
+				if(self.settings.num > 0 && i == self.settings.num)
+				{
+					return false;
+				}
 				
 				var li = $('<li>').addClass('item').appendTo(self.list);
 				
@@ -188,7 +193,8 @@
         						{ 
         							username: false, 
         							service: 'github',
-        							pushed_at: 120, 
+        							pushed_at: 120,
+									num: 0,
         							forks: false,
         							devel: false
         						},
