@@ -54,6 +54,16 @@ The last three `options` are for *Github* **only**.
 	
 You can style it at your heart's content, `proudify.css` is a good starting point
 if you want to customize or tweak certain things.
+
+TODO
+----
+These "features" are in the works and will be added soon :)
+
+* show fork & watch count ( suggestion by [@amanelis](https://github.com/amanelis) )
+* show public activity feed (with this generic RSS support as well)
+* show tweets
+* 'real time' preview, so anybody could try it before creating his own
+* `proudify` gem (generate gh-pages, etc) for quick `setup`
 	
 Contribute
 ----------
