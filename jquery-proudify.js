@@ -31,7 +31,6 @@
 							appendTo(this.element);
 
 			this.list = $('<ul>').
-							addClass('list').
 							appendTo(this.wrapper);
 
 			this.loading = $('<li>').
@@ -135,11 +134,10 @@
 							appendTo(this.element);
 
 			this.list = $('<ul>').
-							addClass('list').
 							appendTo(this.wrapper);
 
 			this.loading = $('<li>').
-							addClass('item loading').
+							addClass('loading').
 							html('<span class="desc">Loading ...</span>').
 							appendTo(this.list);
 	
@@ -164,7 +162,7 @@
 
 			$.each(this.badges,function(i, item) 
 			{
-				var li = $('<li>').addClass('item').appendTo(self.list);
+				var li = $('<li>').appendTo(self.list);
 				var link = $('<a>').
 				attr('href', 'http://coderwall.com/' + self.settings.username).
 				attr('target', '_blank').
@@ -208,3 +206,4 @@
 		return this;
 	};
 })(jQuery);
+
