@@ -99,7 +99,7 @@
 					return false;
 				}
 				
-				var li = $('<li>').addClass('item').appendTo(self.list);
+				var li = $('<li>').appendTo(self.list);
 				
 				$('<a>').
 				attr('href', item.html_url).
