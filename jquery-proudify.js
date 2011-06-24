@@ -42,7 +42,7 @@
 			}
 
 			this.loading = $('<li>').
-							addClass('item loading').
+							addClass('loading').
 							html('<span class="desc">Loading ...</span>').
 							appendTo(this.list);
 	
