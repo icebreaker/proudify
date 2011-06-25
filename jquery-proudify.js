@@ -14,16 +14,14 @@
 	{
 		this.element = element;
 		this.settings = settings;
-		this.init();
+		this.repositories = [];
+		this.wrapper = false;
+		this.list = false;
+		this.loading = false;
+	        this.init();
 	};
 	GitHub.prototype = 
 	{
-		element : false,
-		settings : {},
-		repositories : [],
-		wrapper : false,
-		list : false,
-		loading : false,
 		init : function()
 		{
 			this.wrapper = $('<div>').
@@ -118,16 +116,14 @@
 	{
 		this.element = element;
 		this.settings = settings;
+	        this.badges = [];
+		this.wrapper = false;
+		this.list = false;
+		this.loading = false;
 		this.init();
 	};
 	CoderWall.prototype = 
 	{
-		element : false,
-		settings : {},
-		badges : [],
-		wrapper : false,
-		list : false,
-		loading : false,
 		init : function()
 		{
 			this.wrapper = $('<div>').
