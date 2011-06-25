@@ -73,6 +73,8 @@
 			
 			var self = this;
 
+                        var count = 0;
+
 			$.each(this.repositories.sort(
 			function(a, b)
 			{
@@ -85,7 +87,7 @@
 					return;
 				}
 
-				if(self.settings.num > 0 && i == self.settings.num)
+				if(self.settings.num > 0 && count >= self.settings.num)
 				{
 					return false;
 				}
@@ -108,6 +110,8 @@
 				{
 					$('<span>').addClass('status red').html('ON HOLD').appendTo(li);
 				}
+
+                                count += 1;
 			});
 		}
 	};
