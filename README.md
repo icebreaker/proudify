@@ -59,6 +59,7 @@ TODO
 ----
 These "features" are in the works and will be added soon :)
 
+* pull and show other public Github user info
 * show fork & watch count ( suggestion by [@amanelis](https://github.com/amanelis) )
 * show public activity feed (with this generic RSS support as well)
 * show tweets
