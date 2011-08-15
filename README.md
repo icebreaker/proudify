@@ -1,6 +1,6 @@
 Proudify
 ========
-This is basically [http://produfiy.me](http://proudify.me) which is a live example of *Proudify*.
+This is basically [http://produfiy.me](http://proudify.me) which is a live example of *Proudify*!
 
 You could use this as a base template for your own *creation* :)
 
