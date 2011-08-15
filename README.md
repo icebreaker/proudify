@@ -8,7 +8,7 @@ The GitHub projects part is a Javascript only implementation of [Chris Oliver](h
 The CoderWall badges part is based on [Herman Junge](http://hermanjunge.com/)'s 
 [idea](http://hermanjunge.com/post/6131651487/coderwall-badge-in-your-blog-d).
 
-Click [here](http://proudify.me) to check it out in action.
+Click [here](http://proudify.me) to check it out in action!
 
 Getting Started
 ---------------
