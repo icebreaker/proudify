@@ -65,6 +65,10 @@ These "features" are in the works and will be added soon :)
 * show tweets
 * 'real time' preview, so anybody could try it before creating his own
 * `proudify` gem (generate gh-pages, etc) for quick `setup`
+
+Credits
+-------
+* Coffee script version by [EnriqueVidal](https://github.com/EnriqueVidal)
 	
 Contribute
 ----------
