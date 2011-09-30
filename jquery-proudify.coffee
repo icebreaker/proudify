@@ -66,7 +66,7 @@ class CoderWall
     self = this
     $.each @badges, (i,item)->
       li    = $( '<li>' ).addClass( 'item' ).appendTo self.list
-      link  = $( '<a>' ).attr('href', 'shttp://coderwall.com/' + self.settings.username ).attr( 'target', '_blank' ).appendTo li
+      link  = $( '<a>' ).attr('href', 'http://coderwall.com/' + self.settings.username ).attr( 'target', '_blank' ).appendTo li
 
       $('<img>').attr( 'alt', item.name ).attr( 'title', item.description).attr( 'src', item.badge ).appendTo link
 
