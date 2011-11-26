@@ -14,16 +14,14 @@
 	{
 		this.element = element;
 		this.settings = settings;
-		this.init();
+		this.repositories = [];
+		this.wrapper = false;
+		this.list = false;
+		this.loading = false;
+	        this.init();
 	};
 	GitHub.prototype = 
 	{
-		element : false,
-		settings : {},
-		repositories : [],
-		wrapper : false,
-		list : false,
-		loading : false,
 		init : function()
 		{
 			this.wrapper = $('<div>').
@@ -75,6 +73,8 @@
 			
 			var self = this;
 
+                        var count = 0;
+
 			$.each(this.repositories.sort(
 			function(a, b)
 			{
@@ -87,7 +87,7 @@
 					return;
 				}
 
-				if(self.settings.num > 0 && i == self.settings.num)
+				if(self.settings.num > 0 && count >= self.settings.num)
 				{
 					return false;
 				}
@@ -110,6 +110,8 @@
 				{
 					$('<span>').addClass('status red').html('ON HOLD').appendTo(li);
 				}
+
+                                count += 1;
 			});
 		}
 	};
@@ -118,16 +120,14 @@
 	{
 		this.element = element;
 		this.settings = settings;
+	        this.badges = [];
+		this.wrapper = false;
+		this.list = false;
+		this.loading = false;
 		this.init();
 	};
 	CoderWall.prototype = 
 	{
-		element : false,
-		settings : {},
-		badges : [],
-		wrapper : false,
-		list : false,
-		loading : false,
 		init : function()
 		{
 			this.wrapper = $('<div>').
