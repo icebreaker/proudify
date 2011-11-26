@@ -39,7 +39,7 @@ You'll also need a recent version of jQuery as seen above.
 ###Compile from coffescript
 
 ```bash
-coffee -o build -j jquery-proudify.js -c src/renderer.coffee src/github.coffee src/coderwall.coffee src/proudify.coffee
+cake build
 ```
 
 You'll now have a jquery-proudify.js file under the build folder.
@@ -83,7 +83,7 @@ These "features" are in the works and will be added soon :)
 
 Credits
 -------
-* Coffee script version by [EnriqueVidal](https://github.com/EnriqueVidal)
+* Initial CoffeeScript version by [EnriqueVidal](https://github.com/EnriqueVidal)
 
 Contribute
 ----------
