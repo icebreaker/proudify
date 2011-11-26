@@ -1,22 +1,28 @@
 class GitHub
-  constructor: ( element, settings )->
+  constructor: ( element, settings ) ->
     @settings     = settings
     @renderer     = new Renderer element, settings
     @repositories = []
 
     this.fetch 'https://api.github.com/users/' + settings.username + '/repos?callback=?'
 
-  fetch: ( url )->
+  fetch: ( url ) ->
     self = this
-    $.getJSON url, ( result )->
-      self.repositories.push repository for repository in result.data
-      self.render()
+    $.getJSON url, ( result ) ->
+      self.paginate result
+
+  paginate: ( result ) ->
+    @repositories.push repository for repository in result.data
+    if result.meta && result.meta.Link && result.meta.Link[0][1]['rel'] != 'first'
+        this.fetch result.meta.Link[0][0] + '&callback=?'
+    else
+        this.render()
 
   render: ->
     pushed_at     = new Date().setDate( new Date().getDate() - @settings.pushed_at )
     sorted_repos  = @repositories.sort( (a, b)-> new Date( b.pushed_at ) - new Date( a.pushed_at ) )
 
-    @renderer.render sorted_repos, ( renderer, item, elements )->
+    @renderer.render sorted_repos, ( renderer, item, elements ) ->
       elements.link.attr( 'href', item.html_url ).attr( 'target', '_blank' ).html( item.name ).appendTo elements.li
       $( document.createElement( 'span' ) ).addClass( 'desc' ).html( item.description ).appendTo elements.li
 
