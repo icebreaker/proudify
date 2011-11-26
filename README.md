@@ -22,17 +22,28 @@ bug fixes without the hassle of updating by yourself.
 
 CSS (skin)
 
-	<link rel="stylesheet" href="proudify.min.css" type="text/css"/>
+```html
+<link rel="stylesheet" href="proudify.min.css" type="text/css"/>
+```
 
 The CSS above is optional and is only required if you do not want to create your own `theme`.
 
 Javascript
-	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery-proudify.min.js"></script>
 
+```html
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-proudify.min.js"></script>
+```
 You'll also need a recent version of jQuery as seen above.
-	
+
+###Compile from coffescript
+
+```bash
+coffee -o build -j jquery-proudify.js -c src/renderer.coffee src/github.coffee src/coderwall.coffee src/proudify.coffee
+```
+
+You'll now have a jquery-proudify.js file under the build folder.
+
 ### Configure
 
 Proudify takes a `hash` of options as described below:
@@ -42,16 +53,20 @@ Proudify takes a `hash` of options as described below:
 * pushed_at - number of days after a repository is considered to be **ON HOLD** (default: **120 ~ 4 months**) 
 * num - limit the number of shown repositories (default: **0 - show all**)
 * forks - include forks beside your own *original* repositories (default: **false**)
+* onhold_status - The text you wish to use for on hold project (defaults to **ON HOLD**)
+* ongoing_status - The text you wish to use for ongoing projects (defaults to **ONGOING**)
+* loading_message - The loading message you wish to use (defaults to **Loading...**)
 
-The last three `options` are for *Github* **only**.
+The last six `options` are for *Github* **only**.
 
 ### Usage
 
-	<div id="proudify"></div>
-	<script type="text/javascript">
-		$('#proudify').proudify({'username':'icebreaker'});
-	</script>
-	
+```html
+<div id="proudify"></div>
+<script type="text/javascript">
+  $('#proudify').proudify({'username':'icebreaker'});
+</script>
+```
 You can style it at your heart's content, `proudify.css` is a good starting point
 if you want to customize or tweak certain things.
 
@@ -69,7 +84,7 @@ These "features" are in the works and will be added soon :)
 Credits
 -------
 * Coffee script version by [EnriqueVidal](https://github.com/EnriqueVidal)
-	
+
 Contribute
 ----------
 * Fork the project.
