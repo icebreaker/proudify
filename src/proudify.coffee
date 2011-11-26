@@ -1,5 +1,5 @@
 $.fn.extend {
-  proudify: (options)->
+  proudify: ( options )->
     VERSION = [0,1,0]
 
     services = github: GitHub, coderwall: CoderWall
@@ -9,7 +9,6 @@ $.fn.extend {
       pushed_at:        120,
       num:              0,
       forks:            false,
-      devel:            false,
       loading_message:  'Loading ...',
       ongoing_status:   'ONGOING',
       onhold_status:    'ON HOLD'

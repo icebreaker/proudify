@@ -1,32 +1,22 @@
-class GitHub
-  constructor: ( element, settings ) ->
-    @settings     = settings
-    @renderer     = new Renderer element, settings
-    @repositories = []
-
-    this.fetch 'https://api.github.com/users/' + settings.username + '/repos?callback=?'
-
-  fetch: ( url ) ->
-    self = this
-    $.getJSON url, ( result ) ->
-      self.paginate result
+class GitHub extends Service
+  url: ->
+    'https://api.github.com/users/' + @settings.username + '/repos'
 
   paginate: ( result ) ->
-    @repositories.push repository for repository in result.data
     if result.meta && result.meta.Link && result.meta.Link[0][1]['rel'] != 'first'
-        this.fetch result.meta.Link[0][0] + '&callback=?'
+      result.meta.Link[0][0]
     else
-        this.render()
+      false
 
   render: ->
     pushed_at     = new Date().setDate( new Date().getDate() - @settings.pushed_at )
-    sorted_repos  = @repositories.sort( (a, b)-> new Date( b.pushed_at ) - new Date( a.pushed_at ) )
+    sorted_repos  = @data.sort( (a, b)-> new Date( b.pushed_at ) - new Date( a.pushed_at ) )
 
-    @renderer.render sorted_repos, ( renderer, item, elements ) ->
+    super sorted_repos, ( service, item, elements ) ->
       elements.link.attr( 'href', item.html_url ).attr( 'target', '_blank' ).html( item.name ).appendTo elements.li
-      $( document.createElement( 'span' ) ).addClass( 'desc' ).html( item.description ).appendTo elements.li
+      service.create('span', { 'class': 'desc', 'html': item.description } ).appendTo elements.li
 
       if new Date( item.pushed_at ) > pushed_at
-        $( document.createElement( 'span' ) ).addClass( 'status green' ).html( renderer.settings.ongoing_status ).appendTo elements.li
+        service.create( 'span', { 'class': 'status green', 'html': service.settings.ongoing_status } ).appendTo elements.li
       else
-        $( document.createElement( 'span' ) ).addClass( 'status red' ).html( renderer.settings.onhold_status  ).appendTo elements.li
+        service.create( 'span', { 'class': 'status red', 'html': service.settings.onhold_status } ).appendTo elements.li

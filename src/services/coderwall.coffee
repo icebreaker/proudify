@@ -1,17 +1,11 @@
-class CoderWall
-  constructor: (element, settings)->
-    @renderer = new Renderer element, settings
-    @badges   = []
+class CoderWall extends Service
+  url: ->
+   'http://coderwall.com/' + @settings.username + '.json'
 
-    this.fetch 'http://coderwall.com/' + settings.username + '.json?callback=?'
-
-  fetch: (url)->
-    self = this
-    $.getJSON url, (result)->
-      self.badges.push( badge ) for badge in result.data.badges
-      self.render()
+  collect: ( result ) ->
+    @data.push( badge ) for badge in result.data.badges
 
   render: ->
-    @renderer.render @badges, ( renderer, item, elements )->
-      elements.link.attr( 'href', 'http://coderwall.com/' + renderer.settings.username ).attr( 'target', '_blank' ).appendTo elements.li
-      $( document.createElement('img') ).attr( 'alt', item.name ).attr( 'title', item.description).attr( 'src', item.badge ).appendTo elements.link
+    super @data, ( service, item, elements ) ->
+      elements.link.attr( 'href', 'http://coderwall.com/' + service.settings.username ).attr( 'target', '_blank' ).appendTo elements.li
+      service.create( 'img', { 'alt': item.name, 'title': item.description, 'src': item.badge } ).appendTo elements.link
