@@ -1,15 +1,22 @@
 fs = require 'fs'
 {exec} = require 'child_process'
+print = console.log
 
 system_with_echo = ( cmd ) ->
-  console.log cmd
+  print cmd
   exec cmd, ( err, stdout, stderr ) ->
     throw err if err
     if stdout.length || stderr.length
-      console.log stdout + stderr
+      print stdout + stderr
 
 set_extension = ( filename, ext ) ->
   filename.substr( 0, filename.lastIndexOf( '.' ) ) + ext
+
+copy_file = ( src, dst ) ->
+  fs.readFile src, 'utf8', ( err, text ) ->
+    throw err if err
+    fs.writeFile dst, text, ( err ) ->
+      throw err if err
 
 get_options = ( options ) ->
   output = options.output || default_output
@@ -39,3 +46,13 @@ task 'minify', 'minifies proudify (YUI compressor)', ( options ) ->
 task 'release', 'builds and minifies proudify', ( options ) ->
   invoke 'build'
   invoke 'minify'
+
+  [ output, filename ] = get_options options
+
+  files = [ set_extension( css_filename, '.min.css' ),
+            filename,
+            set_extension( filename, '.min.js' ) ]
+
+  for file in files
+    print "Preparing #{file} ..."
+    copy_file "#{output}/#{file}", file
