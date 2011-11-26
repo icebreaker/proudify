@@ -40,8 +40,8 @@ task 'minify', 'minifies proudify (YUI compressor)', ( options ) ->
   js_minified = set_extension filename, '.min.js'
   css_minified = set_extension css_filename, '.min.css'
 
-  system_with_echo "java -jar /opt/bin/yuic.jar --nomunge #{output}/#{filename} > #{output}/#{js_minified}"
-  system_with_echo "java -jar /opt/bin/yuic.jar --nomunge #{css_filename} > #{output}/#{css_minified}"
+  system_with_echo "java -jar /opt/bin/yuic.jar --nomunge #{output}/#{filename} -o #{output}/#{js_minified}"
+  system_with_echo "java -jar /opt/bin/yuic.jar --nomunge #{css_filename} -o #{output}/#{css_minified}"
 
 task 'release', 'builds and minifies proudify', ( options ) ->
   invoke 'build'
@@ -54,5 +54,4 @@ task 'release', 'builds and minifies proudify', ( options ) ->
             set_extension( filename, '.min.js' ) ]
 
   for file in files
-    print "Preparing #{file} ..."
     copy_file "#{output}/#{file}", file
