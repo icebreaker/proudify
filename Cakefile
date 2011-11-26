@@ -25,7 +25,7 @@ option '-f', '--filename [FILE]', "output filename (default: #{default_filename}
 
 task 'build', 'builds proudify', ( options ) ->
   [ output, filename ] = get_options options
-  system_with_echo "coffee -o #{output} -j #{filename} -c src/"
+  system_with_echo "coffee -o #{output} -j #{filename} -c src/core src/services src/*.coffee"
 
 task 'minify', 'minifies proudify (YUI compressor)', ( options ) ->
   [ output, filename ] = get_options options
