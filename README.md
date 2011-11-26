@@ -50,6 +50,7 @@ Proudify takes a `hash` of options as described below:
 
 * username - your *GitHub* or *Coderwall* username (**required**)
 * service - *'github'* or *'coderwall'* (default: **github**)
+* wrap - wrap the projects/badges lists with a `div` element (default: **true**)
 * pushed_at - number of days after a repository is considered to be **ON HOLD** (default: **120 ~ 4 months**) 
 * num - limit the number of shown repositories (default: **0 - show all**)
 * forks - include forks beside your own *original* repositories (default: **false**)

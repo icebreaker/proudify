@@ -26,16 +26,23 @@
 		loading : false,
 		init : function()
 		{
-			this.wrapper = $('<div>').
-							addClass('proudify github').
-							appendTo(this.element);
-
-			this.list = $('<ul>').
-							addClass('list').
-							appendTo(this.wrapper);
+			if (this.settings.wrap)
+			{
+				this.wrapper = $('<div>').
+								addClass('proudify github').
+								appendTo(this.element);
+				this.list = $('<ul>').
+								appendTo(this.wrapper);
+			}
+			else
+			{
+				this.list = $('<ul>').
+								addClass('proudify github').
+								appendTo(this.element);
+			}
 
 			this.loading = $('<li>').
-							addClass('item loading').
+							addClass('loading').
 							html('<span class="desc">Loading ...</span>').
 							appendTo(this.list);
 	
@@ -92,7 +99,7 @@
 					return false;
 				}
 				
-				var li = $('<li>').addClass('item').appendTo(self.list);
+				var li = $('<li>').appendTo(self.list);
 				
 				$('<a>').
 				attr('href', item.html_url).
@@ -120,7 +127,7 @@
 		this.settings = settings;
 		this.init();
 	};
-	CoderWall.prototype = 
+	CoderWall.prototype =
 	{
 		element : false,
 		settings : {},
@@ -130,16 +137,23 @@
 		loading : false,
 		init : function()
 		{
-			this.wrapper = $('<div>').
-							addClass('proudify coderwall').
-							appendTo(this.element);
-
-			this.list = $('<ul>').
-							addClass('list').
-							appendTo(this.wrapper);
+			if (this.settings.wrap)
+			{
+				this.wrapper = $('<div>').
+								addClass('proudify coderwall').
+								appendTo(this.element);
+				this.list = $('<ul>').
+								appendTo(this.wrapper);
+			}
+			else
+			{
+				this.list = $('<ul>').
+								addClass('proudify coderwall').
+								appendTo(this.element);
+			}
 
 			this.loading = $('<li>').
-							addClass('item loading').
+							addClass('loading').
 							html('<span class="desc">Loading ...</span>').
 							appendTo(this.list);
 	
@@ -164,7 +178,7 @@
 
 			$.each(this.badges,function(i, item) 
 			{
-				var li = $('<li>').addClass('item').appendTo(self.list);
+				var li = $('<li>').appendTo(self.list);
 				var link = $('<a>').
 				attr('href', 'http://coderwall.com/' + self.settings.username).
 				attr('target', '_blank').
@@ -180,31 +194,33 @@
 			$('<div>').css('clear','both').appendTo(this.list);
 		}
 	};
-	
-	$.fn.proudify = function(options) 
+
+	$.fn.proudify = function(options)
 	{
-		var services = 
+		var services =
 		{
 			github : GitHub,
 			coderwall : CoderWall
 		};
-		
-		var settings = $.extend({}, 
-        						{ 
-        							username: false, 
-        							service: 'github',
-        							pushed_at: 120,
-									num: 0,
-        							forks: false,
-        							devel: false
-        						},
-       							options || {});
 
-      	if(settings.username && (settings.service in services))
-      	{
+		var settings = $.extend({},
+								{
+									username: false, 
+									service: 'github',
+									pushed_at: 120,
+									num: 0,
+									forks: false,
+									wrap: true,
+									devel: false
+								},
+								options || {});
+
+		if(settings.username && (settings.service in services))
+		{
 			new services[settings.service](this, settings);
 		}
-      	      	
+
 		return this;
 	};
 })(jQuery);
+
