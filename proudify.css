@@ -9,7 +9,7 @@
 { 
 	text-decoration: underline; 
 }
-.proudify ul.list
+.proudify ul
 {
 	list-style-type: none;
 	padding: 0;
@@ -52,11 +52,11 @@
 	border-bottom: 1px solid #333436;
 	border-right: 1px solid #333436;
 }
-.proudify.github ul.list
+.proudify.github ul
 {
 	margin: 5px;
 }
-.proudify.github li.item
+.proudify.github li
 {
 	box-shadow: black 0px 3px 5px inset;
 	-moz-box-shadow: black 0px 3px 5px inset;
@@ -72,22 +72,22 @@
 /****** GitHub - end ******/
 
 /****** Coderwall - begin ******/
-.proudify.coderwall li.item
+.proudify.coderwall li
 {
 	float: left;
 	margin: 5px;
 }
-.proudify.coderwall li.item a img
+.proudify.coderwall li a img
 {
 	width: 90px;
 	height: 90px;
 	border: 0;
 }
-.proudify.coderwall li.item a img
+.proudify.coderwall li a img
 {
 	opacity: 1.0;
 }
-.proudify.coderwall li.item a:hover img
+.proudify.coderwall li a:hover img
 {
 	opacity: 0.6;
 }

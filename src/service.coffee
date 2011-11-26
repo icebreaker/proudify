@@ -4,8 +4,8 @@ class Service
   constructor: ( @element, @settings ) ->
     @data       = []
     wrapper     = this.create( 'div',  { 'class': 'proudify ' + @settings.service } ).appendTo @element
-    @list       = this.create( 'ul' ,  { 'class': 'list' } ).appendTo wrapper
-    @preloader  = this.create( 'li' ,  { 'class': 'item loading' } ).appendTo @list
+    @list       = this.create( 'ul' ).appendTo wrapper
+    @preloader  = this.create( 'li' ,  { 'class': 'loading' } ).appendTo @list
     message     = this.create( 'span', { 'class': 'desc', 'html': @settings.loading_message } ).appendTo @preloader
 
     this.fetch this.url()
@@ -54,7 +54,7 @@ class Service
         return false  if self.settings.num > 0 && i == settings.num
 
       elements = {
-        li:   self.create( 'li', { 'class': 'item' } ).appendTo( self.list ),
+        li:   self.create( 'li' ).appendTo( self.list ),
         link: self.create( 'a' )
       }
 
