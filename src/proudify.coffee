@@ -10,6 +10,7 @@ $.fn.extend {
       num:              0,
       forks:            false,
       num_forks:        true,
+      num_watchers:     true,
       loading_message:  'Loading ...',
       ongoing_status:   'ONGOING',
       onhold_status:    'ON HOLD'
