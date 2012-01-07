@@ -26,13 +26,27 @@ get_options = ( options ) ->
 default_output = 'build'
 default_filename = 'jquery-proudify.js'
 css_filename = 'proudify.css'
+coffee_scripts = [
+  'src/service.coffee',
+  'src/services/coderwall.coffee',
+  'src/services/github.coffee',
+  'src/proudify.coffee'
+]
 
 option '-o', '--output [DIR]', "output directory (default: #{default_output})"
 option '-f', '--filename [FILE]', "output filename (default: #{default_filename})"
 
 task 'build', 'builds proudify', ( options ) ->
   [ output, filename ] = get_options options
-  system_with_echo "coffee -o #{output} -j #{filename} -c src/service.coffee src/services src/proudify.coffee"
+  system_with_echo "coffee -o #{output} -j #{filename} -c #{coffee_scripts.join(' ')}"
+
+task 'watch', 'watches and builds proudify when changes detected', ( options ) ->
+  print "watching, press ctrl+c to exit ..."
+  for file in coffee_scripts
+    fs.watchFile file, (curr, prev) ->
+      if curr.mtime > prev.mtime
+        print "#{file} changed"
+        invoke 'build'
 
 task 'minify', 'minifies proudify (YUI compressor)', ( options ) ->
   [ output, filename ] = get_options options
