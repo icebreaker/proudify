@@ -46,6 +46,7 @@ Proudify takes a `hash` of options as described below:
 * num - limit the number of shown repositories (default: **0 - show all**)
 * forks - include forks beside your own *original* repositories (default: **false**)
 * num_forks - Shows forks number from the repositories (default: **true**)
+* num_watchers - Shows watchers number from the repositories (default: **true**)
 * onhold_status - The text you wish to use for on hold project (defaults to **ON HOLD**)
 * ongoing_status - The text you wish to use for ongoing projects (defaults to **ONGOING**)
 * loading_message - The loading message you wish to use (defaults to **Loading...**)
