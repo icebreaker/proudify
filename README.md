@@ -53,6 +53,7 @@ Proudify takes a `hash` of options as described below:
 * pushed_at - number of days after a repository is considered to be **ON HOLD** (default: **120 ~ 4 months**) 
 * num - limit the number of shown repositories (default: **0 - show all**)
 * forks - include forks beside your own *original* repositories (default: **false**)
+* num_forks - Shows the number of forks of the repositories (default: **true**)
 * onhold_status - The text you wish to use for on hold project (defaults to **ON HOLD**)
 * ongoing_status - The text you wish to use for ongoing projects (defaults to **ONGOING**)
 * loading_message - The loading message you wish to use (defaults to **Loading...**)
