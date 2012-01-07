@@ -145,6 +145,12 @@
           'class': 'desc',
           'html': item.description
         }).appendTo(elements.li);
+        if (service.settings.num_forks) {
+            service.create('span',{
+                'class': 'counters',
+                'html': 'Forks: ' + item.forks
+            }).appendTo(elements.li);
+        }
         if (new Date(item.pushed_at) > pushed_at) {
           return service.create('span', {
             'class': 'status green',
@@ -174,6 +180,7 @@
         pushed_at: 120,
         num: 0,
         forks: false,
+        num_forks: true,
         loading_message: 'Loading ...',
         ongoing_status: 'ONGOING',
         onhold_status: 'ON HOLD'
