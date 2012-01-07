@@ -36,14 +36,6 @@ Javascript
 ```
 You'll also need a recent version of jQuery as seen above.
 
-###Compile from coffescript
-
-```bash
-cake build
-```
-
-You'll now have a jquery-proudify.js file under the build folder.
-
 ### Configure
 
 Proudify takes a `hash` of options as described below:
@@ -83,14 +75,21 @@ These "features" are in the works and will be added soon :)
 
 Credits
 -------
-* Initial CoffeeScript version by [EnriqueVidal](https://github.com/EnriqueVidal)
+* initial CoffeeScript version by [EnriqueVidal](https://github.com/EnriqueVidal)
 
 Contribute
 ----------
 * Fork the project.
-* Make your feature addition or bug fix.
-* Send me a pull request. Bonus points for topic branches.
+* Make your feature addition or bug fix in CoffeeScript files **not** JavaScript files.
 * Do **not** bump the version number.
+* Send me a pull request. Bonus points for topic branches.
+
+#### Cakefile
+```bash
+cake build		# builds proudify (results in the `build` directory)
+cake watch		# watches and builds proudify when changes detected (`src` directory)
+cake release	# builds and minifies proudify (results in the `build` directory)
+```
 
 License
 -------
