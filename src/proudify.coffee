@@ -2,7 +2,7 @@ $.fn.extend {
   proudify: ( options )->
     VERSION = [0,2,0]
 
-    services = github: GitHub, coderwall: CoderWall
+    services = github: GitHub, coderwall: CoderWall, codeschool: CodeSchool
     settings = $.extend {}, {
       username:         false,
       service:          'github',
