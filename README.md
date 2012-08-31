@@ -5,14 +5,14 @@ Proudify is an awesome jQuery plugin to display your GitHub projects and Coderwa
 The GitHub projects part is a Javascript only implementation of [Chris Oliver](https://github.com/excid3)'s idea called
 [Current Projects](http://currentprojects.heroku.com/), suitable for static web pages.
 
-The CoderWall badges part is based on [Herman Junge](http://hermanjunge.com/)'s 
+The CoderWall badges part is based on [Herman Junge](http://hermanjunge.com/)'s
 [idea](http://hermanjunge.com/post/6131651487/coderwall-badge-in-your-blog-d).
 
 Click [here](http://proudify.me) to check it out in action!
 
 Getting Started
 ---------------
-You can either copy `jquery-proudify.min.js` and `proudify.min.css` or 
+You can either copy `jquery-proudify.min.js` and `proudify.min.css` or
 link to them in this repository.
 
 The later is recommended because you will get instant updates and
@@ -40,16 +40,19 @@ You'll also need a recent version of jQuery as seen above.
 
 Proudify takes a `hash` of options as described below:
 
-* username - your *GitHub* or *Coderwall* username (**required**)
-* service - *'github'* or *'coderwall'* (default: **github**)
-* pushed_at - number of days after a repository is considered to be **ON HOLD** (default: **120 ~ 4 months**) 
+#### Options for all services
+
+* username - your *GitHub*, *Coderwall* or *CodeSchool* username (**required**)
+* service - *'github'*, *'coderwall'*, *'codeschool'* (default: **github**)
+
+#### Github only options
+
+* pushed_at - number of days after a repository is considered to be **ON HOLD** (default: **120 ~ 4 months**)
 * num - limit the number of shown repositories (default: **0 - show all**)
 * forks - include forks beside your own *original* repositories (default: **false**)
 * onhold_status - The text you wish to use for on hold project (defaults to **ON HOLD**)
 * ongoing_status - The text you wish to use for ongoing projects (defaults to **ONGOING**)
 * loading_message - The loading message you wish to use (defaults to **Loading...**)
-
-The last six `options` are for *Github* **only**.
 
 ### Usage
 

@@ -28,6 +28,7 @@ default_filename = 'jquery-proudify.js'
 css_filename = 'proudify.css'
 coffee_scripts = [
   'src/service.coffee',
+  'src/services/codeschool.coffee',
   'src/services/coderwall.coffee',
   'src/services/github.coffee',
   'src/proudify.coffee'
