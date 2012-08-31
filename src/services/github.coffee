@@ -16,6 +16,12 @@ class GitHub extends Service
       elements.link.attr( 'href', item.html_url ).attr( 'target', '_blank' ).html( item.name ).appendTo elements.li
       service.create('span', { 'class': 'desc', 'html': item.description } ).appendTo elements.li
 
+      if service.settings.num_forks
+        service.create( 'span', { 'class': 'counters', 'html': 'Forks: ' + item.forks } ).appendTo elements.li
+
+      if service.settings.num_watchers
+        service.create( 'span', { 'class': 'counters', 'html': 'Watchers: ' + item.watchers } ).appendTo elements.li
+
       if new Date( item.pushed_at ) > pushed_at
         service.create( 'span', { 'class': 'status green', 'html': service.settings.ongoing_status } ).appendTo elements.li
       else
