@@ -54,6 +54,10 @@ Proudify takes a `hash` of options as described below:
 * ongoing_status - The text you wish to use for ongoing projects (defaults to **ONGOING**)
 * loading_message - The loading message you wish to use (defaults to **Loading...**)
 
+#### CodeSchool only options
+
+* completed - Show only *course completion badges* (default: **false**)
+
 ### Usage
 
 ```html

@@ -11,7 +11,8 @@ $.fn.extend {
       forks:            false,
       loading_message:  'Loading ...',
       ongoing_status:   'ONGOING',
-      onhold_status:    'ON HOLD'
+      onhold_status:    'ON HOLD',
+      completed:        false
     }, options || {}
 
     new services[ settings.service ]( this, settings ) if settings.username
