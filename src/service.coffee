@@ -53,6 +53,9 @@ class Service
         return        if item.fork && ! self.settings.forks
         return false  if self.settings.num > 0 && i == settings.num
 
+      if item.course_url
+        return        if self.settings.completed && -1 == item.badge.search /completed/
+
       elements = {
         li:   self.create( 'li' ).appendTo( self.list ),
         link: self.create( 'a' )
