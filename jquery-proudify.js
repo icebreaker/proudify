@@ -173,7 +173,7 @@
           'alt': item.name,
           'title': item.description,
           'src': item.badge
-        }).appendTo(elements.link);
+        }).attr('height', '200').attr('width', '200').appendTo(elements.link);
       });
     };
 
